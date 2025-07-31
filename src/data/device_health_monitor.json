@@ -1,0 +1,26 @@
+[
+    {
+        "DeviceID": "Thermal-001",
+        "Battery": "91%",
+        "Status": "Online",
+        "SignalStrength": "Strong"
+    },
+    {
+        "DeviceID": "Smoke-007",
+        "Battery": "56%",
+        "Status": "Online",
+        "SignalStrength": "Moderate"
+    },
+    {
+        "DeviceID": "ControlHub-01",
+        "Battery": "100% (Plugged In)",
+        "Status": "Online",
+        "SignalStrength": "Strong"
+    },
+    {
+        "DeviceID": "Temp-004",
+        "Battery": "22%",
+        "Status": "Offline",
+        "SignalStrength": "Weak"
+    }
+]

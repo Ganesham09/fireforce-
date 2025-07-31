@@ -1,0 +1,34 @@
+[
+    {
+        "Zone": "Lab A",
+        "Temperature": "36.2\u00b0C",
+        "Smoke Level": "Low",
+        "Humidity": "42%",
+        "Status": "Normal",
+        "Last Updated": "2025-07-31 23:14:21"
+    },
+    {
+        "Zone": "Lab B",
+        "Temperature": "41.7\u00b0C",
+        "Smoke Level": "Moderate",
+        "Humidity": "39%",
+        "Status": "Alert",
+        "Last Updated": "2025-07-31 23:14:20"
+    },
+    {
+        "Zone": "Server Room",
+        "Temperature": "28.3\u00b0C",
+        "Smoke Level": "None",
+        "Humidity": "48%",
+        "Status": "Normal",
+        "Last Updated": "2025-07-31 23:14:19"
+    },
+    {
+        "Zone": "Storage Room",
+        "Temperature": "38.9\u00b0C",
+        "Smoke Level": "Low",
+        "Humidity": "44%",
+        "Status": "Warning",
+        "Last Updated": "2025-07-31 23:14:18"
+    }
+]
