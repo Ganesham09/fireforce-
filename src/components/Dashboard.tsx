@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LogOut, Activity, Shield, AlertTriangle, Settings, Bell, Plus, Users, Clock } from 'lucide-react';
+import { LogOut,  Shield, AlertTriangle,  Plus, Users, Clock } from 'lucide-react';
 import { LiveSensorReadings } from './dashboard/LiveSensorReadings';
 import { DeviceHealthMonitor } from './dashboard/DeviceHealthMonitor';
 import { EventHistoryLog } from './dashboard/EventHistoryLog';
