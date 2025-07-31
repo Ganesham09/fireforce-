@@ -7,11 +7,32 @@
         "Resolved": true
     },
     {
-        "Timestamp": "2025-07-29T09:22:10",
+        "Timestamp": "2025-07-30T12:15:30",
+        "Zone": "Lab B",
+        "Event": "Fire Alarm Triggered",
+        "Severity": "Critical",
+        "Resolved": false
+    },
+    {
+        "Timestamp": "2025-07-30T10:45:22",
+        "Zone": "Storage",
+        "Event": "Smoke Detected",
+        "Severity": "High",
+        "Resolved": true
+    },
+    {
+        "Timestamp": "2025-07-29T16:22:10",
         "Zone": "Lab C",
         "Event": "Smoke Detected",
         "Severity": "High",
         "Resolved": false
+    },
+    {
+        "Timestamp": "2025-07-29T14:08:45",
+        "Zone": "Server Room",
+        "Event": "Overheating Warning",
+        "Severity": "Medium",
+        "Resolved": true
     },
     {
         "Timestamp": "2025-07-28T17:11:02",

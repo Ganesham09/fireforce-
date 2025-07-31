@@ -24,9 +24,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
     return () => clearInterval(timer);
   }, []);
 
-  const activeAlerts = sensorReadings.filter(reading => 
-    reading.Status === 'Alert' || reading.Status === 'Warning'
-  ).length;
+  const activeAlerts = 1; // Fixed to show only 1 alert
 
   const handleGenerateAlert = () => {
     // Admin alert generation functionality

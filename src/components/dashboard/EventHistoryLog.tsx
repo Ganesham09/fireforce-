@@ -35,7 +35,7 @@ export const EventHistoryLog: React.FC<EventHistoryLogProps> = ({ selectedZone }
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 h-full">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-semibold text-gray-900">Event History</h2>
         <div className="flex items-center gap-2">
@@ -52,58 +52,60 @@ export const EventHistoryLog: React.FC<EventHistoryLogProps> = ({ selectedZone }
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b border-gray-200">
-              <th className="text-left py-3 px-4 font-medium text-gray-900">Timestamp</th>
-              <th className="text-left py-3 px-4 font-medium text-gray-900">Zone</th>
-              <th className="text-left py-3 px-4 font-medium text-gray-900">Event</th>
-              <th className="text-left py-3 px-4 font-medium text-gray-900">Severity</th>
-              <th className="text-left py-3 px-4 font-medium text-gray-900">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredEvents.map((event, index) => (
-              <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                <td className="py-3 px-4">
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-gray-500" />
-                    <span className="text-sm text-gray-900">
-                      {new Date(event.Timestamp).toLocaleString()}
-                    </span>
-                  </div>
-                </td>
-                <td className="py-3 px-4">
-                  <span className="text-sm font-medium text-gray-900">{event.Zone}</span>
-                </td>
-                <td className="py-3 px-4">
-                  <span className="text-sm text-gray-900">{event.Event}</span>
-                </td>
-                <td className="py-3 px-4">
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getSeverityColor(event.Severity)}`}>
-                    {event.Severity}
-                  </span>
-                </td>
-                <td className="py-3 px-4">
-                  <div className="flex items-center gap-2">
-                    {event.Resolved ? (
-                      <>
-                        <CheckCircle className="w-4 h-4 text-green-600" />
-                        <span className="text-sm text-green-700">Resolved</span>
-                      </>
-                    ) : (
-                      <>
-                        <XCircle className="w-4 h-4 text-red-600" />
-                        <span className="text-sm text-red-700">Unresolved</span>
-                      </>
-                    )}
-                  </div>
-                </td>
+      <div className="overflow-hidden h-full">
+        <div className="overflow-y-auto h-full pr-2">
+          <table className="w-full">
+            <thead className="sticky top-0 bg-white z-10">
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-3 px-4 font-medium text-gray-900">Timestamp</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-900">Zone</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-900">Event</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-900">Severity</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-900">Status</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredEvents.map((event, index) => (
+                <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-gray-500" />
+                      <span className="text-sm text-gray-900">
+                        {new Date(event.Timestamp).toLocaleString()}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="py-3 px-4">
+                    <span className="text-sm font-medium text-gray-900">{event.Zone}</span>
+                  </td>
+                  <td className="py-3 px-4">
+                    <span className="text-sm text-gray-900">{event.Event}</span>
+                  </td>
+                  <td className="py-3 px-4">
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getSeverityColor(event.Severity)}`}>
+                      {event.Severity}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4">
+                    <div className="flex items-center gap-2">
+                      {event.Resolved ? (
+                        <>
+                          <CheckCircle className="w-4 h-4 text-green-600" />
+                          <span className="text-sm text-green-700">Resolved</span>
+                        </>
+                      ) : (
+                        <>
+                          <XCircle className="w-4 h-4 text-red-600" />
+                          <span className="text-sm text-red-700">Unresolved</span>
+                        </>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {filteredEvents.length === 0 && (
